@@ -4,7 +4,7 @@ import _ from "lodash";
 
 import { search, categorize, filterRating } from "../../utils";
 import { MoviesTable, Pagination } from "../../components";
-import { Input, Loading, ListGroup } from "../../components/common";
+import { Input, Loading,  } from "../../components/common";
 
 import { getMovies } from "../../actions/moviesAction";
 import { getGenres } from "../../actions/genreAction";
@@ -41,7 +41,7 @@ class Movies extends Component {
       rating,
     } = this.state;
 
-    const { movies, genres, loggedIn } = this.props;
+    const { movies } = this.props;
 
     if (_.isEmpty(movies)) {
       return (
@@ -62,30 +62,9 @@ class Movies extends Component {
       <div className="background-container">
         <div className="mx-5 py-5">
           <div className="row">
-            <div className="col-lg-2 col-sm-12">
-              <h4 className="text-muted text-left p-1">Filters</h4>
-              <ListGroup
-                active={currentGenre}
-                onChange={(val) => this.handleChange("currentGenre", val)}
-                options={genres}
-              />
+          
 
-              <Input
-                onChange={(val) =>
-                  this.handleChange("rating", val.target.value)
-                }
-                label={"Rating"}
-                min={0}
-                max={10}
-                placeholder="0-10"
-                type="number"
-                iconClass="fas fa-star"
-              />
-              {/* { loggedIn && <Link to='/movies/new' className='btn btn-primary btn-block my-2 text-white'> Add Movie </Link> } */}
-              {/* <Rating total={5} filled={rating} onChange={val => this.handleChange('rating', val)}/> */}
-            </div>
-
-            <div className="col-lg-10 col-sm-12">
+            <div className="col-lg-12 col-sm-12">
               <Input
                 onChange={(event) =>
                   this.handleChange("searchFilter", event.target.value)

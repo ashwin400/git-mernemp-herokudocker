@@ -1,20 +1,19 @@
 {
-  "name": "icinema",
+  "name": "moviesrec",
   "version": "1.0.0",
   "description": "Website for movie theaters.",
   "main": "server.js",
   "scripts": {
     "setup": "npm install && npm run setup-frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "start": "node server.js",
+    "start": "concurrently \"npm run server\" \"npm run frontend\"",
     "server": "nodemon server.js",
     "frontend": "cd ./frontend && npm start",
     "setup-frontend": "cd frontend && npm install",
     "build-frontend": "npm run setup-frontend && cd frontend && npm run build",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run build-frontend"
   },
-  "author": "Orif Milod",
-  "license": "MIT",
+  
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
@@ -31,7 +30,10 @@
     "passport-jwt": "^4.0.0",
     "redis": "^2.8.0",
     "validator": "^9.4.1",
-    "webpack-sources": "^1.4.3"
+    "webpack-sources": "^1.4.3",
+    "dotenv": "^6.1.0",
+    "morgan": "^1.8.2",
+    "ejs": "^3.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.4"
