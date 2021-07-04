@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Website for movie theaters.",
   "main": "server.js",
+  "homepage": "https://mydocker-empmern.herokuapp.com/",
   "scripts": {
     "setup": "npm install && npm run setup-frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
