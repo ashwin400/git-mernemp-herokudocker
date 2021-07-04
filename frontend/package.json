@@ -1,6 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
+  "homepage": "https://mydocker-empmern.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@hapi/joi": "^15.0.0",
